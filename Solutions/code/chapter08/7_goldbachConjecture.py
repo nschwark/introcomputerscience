@@ -35,33 +35,27 @@ def main():
         primeList.sort(reverse=True)
         print(primeList)
 
-    while total != 0:
-       
-        #print(listNum)
+    while True:
 
-        if listNum != len(primeList):
-            total = number - primeList[listNum]
-            #print(total)
-        else:
-            listNum = 0
+        
+        total = number - primeList[listNum]
 
-        while total2 != 0:
+        while True:
             
-            if listNum2 != len(primeList):
-                total2 = total - primeList[listNum2]
-                #print(total2)
-            else:
-                total2 = 0
-                listNum2 = 0
+            total2 = total - primeList[listNum2]
 
             if total2 == 0:
-                total = 0
+                break
+            elif listNum2 >= (len(primeList) -1):
+                listNum2 = 0
+                break
+            else:
+                listNum2 = listNum2 + 1
 
-            listNum2 = listNum2 + 1
-        
-        
-        print("ListNum2: " , listNum2)
-        listNum = listNum + 1
+        if total2 == 0:
+            break
+        else:
+            listNum = listNum + 1
 
     print(len(primeList))
     print(listNum, listNum2)
